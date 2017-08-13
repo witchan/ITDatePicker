@@ -360,7 +360,7 @@ UIPickerViewDataSource>
 
 - (void)refreshData {
     
-    if (self.showToday && self.defaultYear == self.thisYear) {
+    if (self.showToday && self.selectedYear == self.thisYear && self.selectedYear == self.thisYear) {
         self.hideMonth = YES;
     } else {
         self.hideMonth = NO;
@@ -392,7 +392,7 @@ UIPickerViewDataSource>
         
         kITLocalDate(selectedDate);
         
-        [self.delegate datePickerController:nil didSelectedDate:selectedDate dateString:dateString];
+        [self.delegate datePickerController:(id)self didSelectedDate:selectedDate dateString:dateString];
     }
     
     [self cancelButtonOnClicked:nil];
@@ -408,12 +408,9 @@ UIPickerViewDataSource>
     self.maximumDate = [self.dateFormatter dateFromString:@"2100.12"];
     self.minimumDate = [self.dateFormatter dateFromString:@"1900.01"];
     
-    _monthCount = 12;
-    _yearCount = _maximumYear - _minimumYear+1;
-    _defaultYear = _thisYear;
-    _defaultMonth = _thisMonth;
     _showToday = YES;
-    
+    _monthCount = 12;
+    self.defaultDate = [NSDate date];
     [self addSubview:self.toolBar];
     [self addSubview:self.pickerView];
 }
@@ -500,12 +497,12 @@ UIPickerViewDataSource>
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (component == 0) {
         self.selectedYear = row%self.yearCount+self.minimumYear;
-        if (row==0 || row == maxCount-1) {
+        if (row<maxCount/4 || row > maxCount/4*3) {
             [self setDefaultYear:self.selectedYear];
         }
     } else {
         self.selectedMonth = row%self.monthCount+1;
-        if (row==0 || row == maxCount-1) {
+        if (row<maxCount/4 || row > maxCount/4*3) {
             [self setDefaultMonth:self.selectedMonth];
         }
     }
@@ -516,8 +513,8 @@ UIPickerViewDataSource>
     }
     
     if (self.selectedYear == self.minimumYear &&
-         self.selectedMonth < self.minimumMonth) {
-            self.defaultMonth = self.minimumMonth;
+        self.selectedMonth < self.minimumMonth) {
+        self.defaultMonth = self.minimumMonth;
     }
     
     if (self.isShowToday) {
@@ -591,49 +588,47 @@ UIPickerViewDataSource>
 }
 
 - (NSInteger)yearCount {
-    if (self.isShowToday) {
-        return _yearCount;
-    } else {
-        return _yearCount;
-    }
+    return _yearCount;
 }
 
 - (void)setMaximumDate:(NSDate *)maximumDate {
-
-    _maximumDate = [maximumDate copy];
-    if (_maximumDate == nil) {
-        _maximumDate = [self.dateFormatter dateFromString:@"2100.12"];
+    
+    if (maximumDate == nil) {
+        maximumDate = [self.dateFormatter dateFromString:@"2100.12"];
     }
-
+    _maximumDate = [maximumDate copy];
+    
     kITLocalDate(_maximumDate);
     
     NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:_maximumDate];
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:_maximumDate];
     self.maximumYear = [components year];
     self.maximumMonth = [components month];
 }
 
 - (void)setMinimumDate:(NSDate *)minimumDate {
     
-    _minimumDate = [minimumDate copy];
-    if (_minimumDate == nil) {
-        _minimumDate = [self.dateFormatter dateFromString:@"1900.01"];
+    if (minimumDate == nil) {
+        minimumDate = [self.dateFormatter dateFromString:@"1900.01"];
     }
-
+    
+    _minimumDate = [minimumDate copy];
+    
     kITLocalDate(_minimumDate);
-
+    
     NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:_minimumDate];
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:_minimumDate];
     self.minimumYear = [components year];
     self.minimumMonth = [components month];
 }
 
 - (void)setDefaultDate:(NSDate *)defaultDate {
     
-    _defaultDate = [defaultDate copy];
-    if (_defaultDate == nil) {
-        _defaultDate = [NSDate date];
+    if (defaultDate == nil) {
+        defaultDate = [NSDate date];
     }
+    
+    _defaultDate = [defaultDate copy];
     
     NSCalendar* calendar = [NSCalendar currentCalendar];
     NSDateComponents* components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth fromDate:_defaultDate];

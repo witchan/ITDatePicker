@@ -18,9 +18,9 @@
  @param date Select the date
  @param dateString Select the date string
  */
-- (void)datePickerController:(ITDatePickerController *)datePickerController
-             didSelectedDate:(NSDate *)date
-                  dateString:(NSString *)dateString;
+- (void)datePickerController:(nonnull ITDatePickerController *)datePickerController
+             didSelectedDate:(nonnull NSDate *)date
+                  dateString:(nonnull NSString *)dateString;
 
 @end
 
@@ -33,46 +33,46 @@
 /**
 The default includes the Cancel button
  */
-@property (copy, nonatomic) NSArray *leftItems;
+@property (nullable ,copy, nonatomic) NSArray *leftItems;
 
 /**
  The default includes the Done button
  */
-@property (copy, nonatomic) NSArray *rightItems;
+@property (nullable, copy, nonatomic) NSArray *rightItems;
 
 //@property (nonatomic, strong, readonly) UIToolbar *toolBar;
 
 /**
  Use UIPickerView to customize datePickerView
  */
-@property (strong, nonatomic, readonly) ITDatePickerView *datePickerView;
+@property (nonnull, strong, nonatomic, readonly) ITDatePickerView *datePickerView;
 
 /**
  Background view
  The default color is white:0 alpha:0.4
  */
-@property (strong, nonatomic, readonly) UIView *backgroundView;
+@property (nonnull, strong, nonatomic, readonly) UIView *backgroundView;
 
 /**
  The date picker controller delegate
  */
-@property (weak, nonatomic) id<ITDatePickerControllerDelegate> delegate;
+@property (nullable, weak, nonatomic) id<ITDatePickerControllerDelegate> delegate;
 
 /**
 The maximum date defaults to December 2100
  */
-@property (copy, nonatomic) NSDate *maximumDate;
+@property (nullable, weak, nonatomic) NSDate *maximumDate;
 
 /**
 You can set the default date or default year or defalut month
 The default select date is now
  */
-@property (copy, nonatomic) NSDate *defaultDate;
+@property (nullable, weak, nonatomic) NSDate *defaultDate;
 
 /**
 The minimum default date is January 1900
  */
-@property (copy, nonatomic) NSDate *minimumDate;
+@property (nullable, weak, nonatomic) NSDate *minimumDate;
 
 /**
  Whether to show "today", default is yes
@@ -110,33 +110,33 @@ The minimum default date is January 1900
 /**
   The date picker controller delegate
   */
-@property (weak, nonatomic) id<ITDatePickerControllerDelegate> delegate;
+@property (nullable, weak, nonatomic) id<ITDatePickerControllerDelegate> delegate;
 
 /**
  The default includes the Cancel button
  */
-@property (copy, nonatomic) NSArray *leftItems;
+@property (nullable, copy, nonatomic) NSArray *leftItems;
 
 /**
  The default includes the Done button
  */
-@property (copy, nonatomic) NSArray *rightItems;
+@property (nullable, copy, nonatomic) NSArray *rightItems;
 
 /**
  The maximum date defaults to December 2100
  */
-@property (copy, nonatomic) NSDate *maximumDate;
+@property (nullable, copy, nonatomic) NSDate *maximumDate;
 
 /**
  You can set the default date or default year or defalut month
  The default select date is now
  */
-@property (copy, nonatomic) NSDate *defaultDate;
+@property (nullable, copy, nonatomic) NSDate *defaultDate;
 
 /**
  The minimum default date is January 1900
  */
-@property (copy, nonatomic) NSDate *minimumDate;
+@property (nullable, copy, nonatomic) NSDate *minimumDate;
 
 /**
  Whether to show "today", default is yes
@@ -182,6 +182,6 @@ The minimum default date is January 1900
  @param isPresenting  Whether it is presenting
  @return transition animation object
  */
-+ (instancetype)animationWithPresenting:(BOOL)isPresenting;
++ (nonnull instancetype)animationWithPresenting:(BOOL)isPresenting;
 
 @end
