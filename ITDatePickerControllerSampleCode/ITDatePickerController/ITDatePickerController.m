@@ -487,7 +487,10 @@ UIPickerViewDataSource>
         return text;
     } else {
         NSInteger index = row % self.monthCount+1;
-        if (self.isHideMonth && self.thisMonth == index) {
+        if (self.isHideMonth &&
+            index == self.thisMonth &&
+            self.selectedMonth == self.thisMonth &&
+            self.selectedYear == self.thisYear) {
             return @"--";
         }
         return [NSString stringWithFormat:@"%02ld", index];
