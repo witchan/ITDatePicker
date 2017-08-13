@@ -500,9 +500,14 @@ UIPickerViewDataSource>
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (component == 0) {
         self.selectedYear = row%self.yearCount+self.minimumYear;
+        if (row==0 || row == maxCount-1) {
+            [self setDefaultYear:self.selectedYear];
+        }
     } else {
         self.selectedMonth = row%self.monthCount+1;
-
+        if (row==0 || row == maxCount-1) {
+            [self setDefaultMonth:self.selectedMonth];
+        }
     }
     
     if (self.selectedYear == self.maximumYear &&
@@ -595,7 +600,7 @@ UIPickerViewDataSource>
 
 - (void)setMaximumDate:(NSDate *)maximumDate {
 
-    _maximumDate = maximumDate;
+    _maximumDate = [maximumDate copy];
     if (_maximumDate == nil) {
         _maximumDate = [self.dateFormatter dateFromString:@"2100.12"];
     }
@@ -610,8 +615,8 @@ UIPickerViewDataSource>
 
 - (void)setMinimumDate:(NSDate *)minimumDate {
     
-    _minimumDate = minimumDate;
-    if (_defaultDate == nil) {
+    _minimumDate = [minimumDate copy];
+    if (_minimumDate == nil) {
         _minimumDate = [self.dateFormatter dateFromString:@"1900.01"];
     }
 
@@ -625,7 +630,7 @@ UIPickerViewDataSource>
 
 - (void)setDefaultDate:(NSDate *)defaultDate {
     
-    _defaultDate = defaultDate;
+    _defaultDate = [defaultDate copy];
     if (_defaultDate == nil) {
         _defaultDate = [NSDate date];
     }

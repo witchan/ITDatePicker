@@ -28,22 +28,22 @@
 - (IBAction)startDateButtonOnClicked:(id)sender {
     
     ITDatePickerController *datePickerController = [[ITDatePickerController alloc] init];
-    datePickerController.tag = 100;
-    datePickerController.delegate = self;
-    datePickerController.showToday = NO;
-    datePickerController.defaultDate = self.startDate;
-    datePickerController.maximumDate = self.endDate;
+    datePickerController.tag = 100;                     // Tag, which may be used in delegate methods
+    datePickerController.delegate = self;               // Set the callback object
+    datePickerController.showToday = NO;                // Whether to show "today", default is yes
+    datePickerController.defaultDate = self.startDate;  // Default date
+    datePickerController.maximumDate = self.endDate;    // maxinum date
     
     [self presentViewController:datePickerController animated:YES completion:nil];
 }
 
 - (IBAction)endDateButtonOnClicked:(id)sender {
     ITDatePickerController *datePickerController = [[ITDatePickerController alloc] init];
-    datePickerController.tag = 200;
-    datePickerController.delegate = self;
-    datePickerController.showToday = YES;
-    datePickerController.defaultDate = self.endDate;
-    datePickerController.minimumDate = self.startDate;
+    datePickerController.tag = 200;                     // Tag, which may be used in delegate methods
+    datePickerController.delegate = self;               // Set the callback object
+    datePickerController.showToday = YES;               // Whether to show "today", default is yes
+    datePickerController.defaultDate = self.endDate;    // Default date
+    datePickerController.minimumDate = self.startDate;  // Minimum date
     
     [self presentViewController:datePickerController animated:YES completion:nil];
 }

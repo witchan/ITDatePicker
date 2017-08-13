@@ -61,18 +61,18 @@ The default includes the Cancel button
 /**
 The maximum date defaults to December 2100
  */
-@property (strong, nonatomic) NSDate *maximumDate;
+@property (copy, nonatomic) NSDate *maximumDate;
 
 /**
 You can set the default date or default year or defalut month
 The default select date is now
  */
-@property (strong, nonatomic) NSDate *defaultDate;
+@property (copy, nonatomic) NSDate *defaultDate;
 
 /**
 The minimum default date is January 1900
  */
-@property (strong, nonatomic) NSDate *minimumDate;
+@property (copy, nonatomic) NSDate *minimumDate;
 
 /**
  Whether to show "today", default is yes
@@ -125,18 +125,18 @@ The minimum default date is January 1900
 /**
  The maximum date defaults to December 2100
  */
-@property (strong, nonatomic) NSDate *maximumDate;
+@property (copy, nonatomic) NSDate *maximumDate;
 
 /**
  You can set the default date or default year or defalut month
  The default select date is now
  */
-@property (strong, nonatomic) NSDate *defaultDate;
+@property (copy, nonatomic) NSDate *defaultDate;
 
 /**
  The minimum default date is January 1900
  */
-@property (strong, nonatomic) NSDate *minimumDate;
+@property (copy, nonatomic) NSDate *minimumDate;
 
 /**
  Whether to show "today", default is yes
