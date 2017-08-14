@@ -33,7 +33,6 @@ ITDatePickerControllerDelegate>
 
 @implementation ITDatePickerController
 
-
 #pragma mark - init
 #pragma mark -
 
@@ -140,24 +139,47 @@ ITDatePickerControllerDelegate>
 #pragma mark - Custom Accessors
 #pragma mark -
 
+- (BOOL)isShowToday {
+    return self.datePickerView.isShowToday;
+}
+
 - (void)setShowToday:(BOOL)showToday {
     [self.datePickerView setShowToday:showToday];
+}
+
+- (NSDate *)maximumDate {
+    return self.datePickerView.maximumDate;
 }
 
 - (void)setMaximumDate:(NSDate *)maximumDate {
     [self.datePickerView setMaximumDate:maximumDate];
 }
 
+- (NSDate *)minimumDate {
+    return self.datePickerView.minimumDate;
+}
+
 - (void)setMinimumDate:(NSDate *)minimumDate {
     [self.datePickerView setMinimumDate:minimumDate];
 }
 
+- (NSInteger)defaultYear {
+    return self.datePickerView.defaultYear;
+}
 - (void)setDefaultYear:(NSInteger)defaultYear {
     [self.datePickerView setDefaultYear:defaultYear];
 }
 
+- (NSInteger)defaultMonth {
+    return self.datePickerView.defaultMonth;
+}
+
 - (void)setDefaultMonth:(NSInteger)defaultMonth {
     [self.datePickerView setDefaultMonth:defaultMonth];
+}
+
+- (NSDate *)defaultDate {
+    return self.datePickerView.defaultDate;
 }
 
 - (void)setDefaultDate:(NSDate *)defaultDate {
@@ -165,8 +187,16 @@ ITDatePickerControllerDelegate>
     [self.datePickerView setDefaultDate:defaultDate];
 }
 
+- (NSArray *)leftItems {
+    return self.datePickerView.leftItems;
+}
+
 - (void)setLeftItems:(NSArray *)leftItems {
     [self.datePickerView setLeftItems:leftItems];
+}
+
+- (NSArray *)rightItems {
+    return self.datePickerView.rightItems;
 }
 
 - (void)setRightItems:(NSArray *)rightItems {
