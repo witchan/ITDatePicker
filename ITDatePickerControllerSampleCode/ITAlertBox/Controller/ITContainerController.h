@@ -10,12 +10,10 @@
 #import "ITAnimation.h"
 #import "ITContainerControllerProtocol.h"
 
-@class ITAlertBox;
-
 @interface ITContainerController : UIViewController
 <ITContainerControllerProtocol>
 
-- (instancetype)initWithContentView:(ITAlertBox *)contentView
+- (instancetype)initWithContentView:(UIView *)contentView
                       animationType:(ITAnimationType)animationType;
 
 @end

@@ -9,8 +9,8 @@
 #import "ITAlertBox.h"
 
 typedef NS_ENUM(NSUInteger, ITDatePickerMode) {
-    ITDatePickerModeYearAndMonth,
-    ITDatePickerModeYearAndMonthAndDay,
+    ITDatePickerModeyyyyMM,
+    ITDatePickerModeyyyyMMdd,
 };
 
 @interface ITDatePicker : ITAlertBox

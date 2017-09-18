@@ -107,7 +107,7 @@ UIPickerViewDataSource>
     [self.pickerView selectRow:(self.defaultYear-self.lowerLimitYear) inComponent:0 animated:NO];
     [self.pickerView selectRow:(self.defaultMonth-1) inComponent:1 animated:NO];
     
-    if (self.mode == ITDatePickerModeYearAndMonthAndDay) {
+    if (self.mode == ITDatePickerModeyyyyMMdd) {
         [self.pickerView selectRow:(self.defaultDay-1) inComponent:2 animated:NO];
     }
 }
@@ -125,7 +125,7 @@ UIPickerViewDataSource>
     if ([self.delegate respondsToSelector:@selector(alertBox:didSelectedResult:)]) {
         NSString *dateString = [NSString stringWithFormat:@"%ld.%02ld", self.defaultYear, self.defaultMonth];
         
-        if (self.mode == ITDatePickerModeYearAndMonthAndDay) {
+        if (self.mode == ITDatePickerModeyyyyMMdd) {
             dateString = [dateString stringByAppendingString:[NSString stringWithFormat:@".%02ld", self.defaultDay]];
         }
         
@@ -204,7 +204,7 @@ UIPickerViewDataSource>
 #pragma mark - UIPickerViewDataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    if (self.mode == ITDatePickerModeYearAndMonth) {
+    if (self.mode == ITDatePickerModeyyyyMM) {
         return 2;
     } else {
         return 3;
@@ -231,7 +231,7 @@ UIPickerViewDataSource>
             text.integerValue == self.thisYear &&
             self.defaultYear == self.thisYear &&
             self.defaultMonth == self.thisMonth &&
-            (self.mode == ITDatePickerModeYearAndMonthAndDay && self.defaultDay == self.thisDay)) {
+            (self.mode == ITDatePickerModeyyyyMMdd && self.defaultDay == self.thisDay)) {
             text = @"至今";
         }
         return text;
@@ -273,7 +273,7 @@ UIPickerViewDataSource>
             self.defaultMonth = self.minimumMonth;
             [self.pickerView selectRow:(self.defaultMonth-1) inComponent:1 animated:YES];
             
-            if (self.defaultDay < self.minimumDay && self.mode == ITDatePickerModeYearAndMonthAndDay) {
+            if (self.defaultDay < self.minimumDay && self.mode == ITDatePickerModeyyyyMMdd) {
                 self.defaultDay = self.minimumDay;
                 [self.pickerView selectRow:(self.defaultDay-1) inComponent:2 animated:YES];
             }
@@ -284,12 +284,12 @@ UIPickerViewDataSource>
             self.defaultMonth = self.minimumMonth;
             [self.pickerView selectRow:(self.defaultMonth-1) inComponent:1 animated:YES];
             
-            if (self.defaultDay < self.minimumDay  && self.mode == ITDatePickerModeYearAndMonthAndDay) {
+            if (self.defaultDay < self.minimumDay  && self.mode == ITDatePickerModeyyyyMMdd) {
                 self.defaultDay = self.minimumDay;
                 [self.pickerView selectRow:(self.defaultDay-1) inComponent:2 animated:YES];
             }
         } else if (self.defaultMonth == self.minimumMonth){
-            if (self.defaultDay < self.minimumDay  && self.mode == ITDatePickerModeYearAndMonthAndDay) {
+            if (self.defaultDay < self.minimumDay  && self.mode == ITDatePickerModeyyyyMMdd) {
                 self.defaultDay = self.minimumDay;
                 [self.pickerView selectRow:(self.defaultDay-1) inComponent:2 animated:YES];
             }
@@ -305,7 +305,7 @@ UIPickerViewDataSource>
             self.defaultMonth = self.maximumMonth;
             [self.pickerView selectRow:(self.defaultMonth-1) inComponent:1 animated:YES];
             
-            if (self.defaultDay > self.maximumDay  && self.mode == ITDatePickerModeYearAndMonthAndDay) {
+            if (self.defaultDay > self.maximumDay  && self.mode == ITDatePickerModeyyyyMMdd) {
                 self.defaultDay = self.maximumDay;
                 [self.pickerView selectRow:(self.defaultDay-1) inComponent:2 animated:YES];
             }
@@ -316,12 +316,12 @@ UIPickerViewDataSource>
             self.defaultMonth = self.maximumMonth;
             [self.pickerView selectRow:(self.defaultMonth-1) inComponent:1 animated:YES];
             
-            if (self.defaultDay > self.maximumDay  && self.mode == ITDatePickerModeYearAndMonthAndDay) {
+            if (self.defaultDay > self.maximumDay  && self.mode == ITDatePickerModeyyyyMMdd) {
                 self.defaultDay = self.maximumDay;
                 [self.pickerView selectRow:(self.defaultDay-1) inComponent:2 animated:YES];
             }
         } else if (self.defaultMonth == self.maximumMonth){
-            if (self.defaultDay > self.maximumDay  && self.mode == ITDatePickerModeYearAndMonthAndDay) {
+            if (self.defaultDay > self.maximumDay  && self.mode == ITDatePickerModeyyyyMMdd) {
                 self.defaultDay = self.maximumDay;
                 [self.pickerView selectRow:(self.defaultDay-1) inComponent:2 animated:YES];
             }
@@ -414,7 +414,7 @@ UIPickerViewDataSource>
     self.maximumYear = [date[0] integerValue];
     self.maximumMonth = [date[1] integerValue];
     
-    if (self.mode == ITDatePickerModeYearAndMonthAndDay) {
+    if (self.mode == ITDatePickerModeyyyyMMdd) {
         self.maximumDay = [date[2] integerValue];
     }
 }
@@ -434,7 +434,7 @@ UIPickerViewDataSource>
     
     self.minimumYear = [date[0] integerValue];
     self.minimumMonth = [date[1] integerValue];
-    if (self.mode == ITDatePickerModeYearAndMonthAndDay) {
+    if (self.mode == ITDatePickerModeyyyyMMdd) {
         self.minimumDay = [date[2] integerValue];
     }
     
@@ -456,7 +456,7 @@ UIPickerViewDataSource>
     
     [self setDefaultYear:[date[0] integerValue]];
     [self setDefaultMonth:[date[1] integerValue]];
-    if (self.mode == ITDatePickerModeYearAndMonthAndDay) {
+    if (self.mode == ITDatePickerModeyyyyMMdd) {
         [self setDefaultDay:[date[2] integerValue]];
     }
 }

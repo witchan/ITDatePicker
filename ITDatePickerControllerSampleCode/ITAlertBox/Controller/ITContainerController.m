@@ -8,7 +8,6 @@
 
 #import "ITContainerController.h"
 #import "ITAppMacro.h"
-#import "ITAlertBox.h"
 #import "ITAnimation.h"
 
 @interface ITContainerController ()
@@ -16,7 +15,7 @@
 
 @property (nonatomic) ITAnimationType animationType;
 
-@property (strong, nonatomic) ITAlertBox *contentView;
+@property (strong, nonatomic) UIView *contentView;
 @property (strong, nonatomic) UIView *backgroundView;
 
 @end
