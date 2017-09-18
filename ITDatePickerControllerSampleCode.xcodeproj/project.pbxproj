@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B2A0EF81F3F44B100216169 /* ITDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2A0EF71F3F44B100216169 /* ITDatePickerController.m */; };
+		5B85DB871F6F76CE00123B19 /* ITContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B85DB761F6F76CE00123B19 /* ITContainerController.m */; };
+		5B85DB881F6F76CE00123B19 /* ITAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B85DB7A1F6F76CE00123B19 /* ITAnimation.m */; };
+		5B85DB891F6F76CE00123B19 /* ITBottomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B85DB7C1F6F76CE00123B19 /* ITBottomAnimation.m */; };
+		5B85DB8A1F6F76CE00123B19 /* ITCenterAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B85DB7E1F6F76CE00123B19 /* ITCenterAnimation.m */; };
+		5B85DB8B1F6F76CE00123B19 /* ITAlertBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B85DB811F6F76CE00123B19 /* ITAlertBox.m */; };
+		5B85DB8C1F6F76CE00123B19 /* ITDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B85DB841F6F76CE00123B19 /* ITDatePicker.m */; };
+		5B85DB8D1F6F76CE00123B19 /* ITPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B85DB861F6F76CE00123B19 /* ITPickerView.m */; };
 		5BAFFC6E1F3C3C29006BB7E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFFC6D1F3C3C29006BB7E4 /* main.m */; };
 		5BAFFC711F3C3C29006BB7E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFFC701F3C3C29006BB7E4 /* AppDelegate.m */; };
 		5BAFFC741F3C3C29006BB7E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFFC731F3C3C29006BB7E4 /* ViewController.m */; };
@@ -17,8 +23,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5B2A0EF61F3F44B100216169 /* ITDatePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITDatePickerController.h; sourceTree = "<group>"; };
-		5B2A0EF71F3F44B100216169 /* ITDatePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITDatePickerController.m; sourceTree = "<group>"; };
+		5B85DB751F6F76CE00123B19 /* ITContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITContainerController.h; sourceTree = "<group>"; };
+		5B85DB761F6F76CE00123B19 /* ITContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITContainerController.m; sourceTree = "<group>"; };
+		5B85DB771F6F76CE00123B19 /* ITContainerControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITContainerControllerProtocol.h; sourceTree = "<group>"; };
+		5B85DB791F6F76CE00123B19 /* ITAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITAnimation.h; sourceTree = "<group>"; };
+		5B85DB7A1F6F76CE00123B19 /* ITAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITAnimation.m; sourceTree = "<group>"; };
+		5B85DB7B1F6F76CE00123B19 /* ITBottomAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITBottomAnimation.h; sourceTree = "<group>"; };
+		5B85DB7C1F6F76CE00123B19 /* ITBottomAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITBottomAnimation.m; sourceTree = "<group>"; };
+		5B85DB7D1F6F76CE00123B19 /* ITCenterAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCenterAnimation.h; sourceTree = "<group>"; };
+		5B85DB7E1F6F76CE00123B19 /* ITCenterAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCenterAnimation.m; sourceTree = "<group>"; };
+		5B85DB801F6F76CE00123B19 /* ITAlertBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITAlertBox.h; sourceTree = "<group>"; };
+		5B85DB811F6F76CE00123B19 /* ITAlertBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITAlertBox.m; sourceTree = "<group>"; };
+		5B85DB821F6F76CE00123B19 /* ITAppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITAppMacro.h; sourceTree = "<group>"; };
+		5B85DB831F6F76CE00123B19 /* ITDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITDatePicker.h; sourceTree = "<group>"; };
+		5B85DB841F6F76CE00123B19 /* ITDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITDatePicker.m; sourceTree = "<group>"; };
+		5B85DB851F6F76CE00123B19 /* ITPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITPickerView.h; sourceTree = "<group>"; };
+		5B85DB861F6F76CE00123B19 /* ITPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITPickerView.m; sourceTree = "<group>"; };
 		5BAFFC691F3C3C29006BB7E4 /* ITDatePickerControllerSampleCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITDatePickerControllerSampleCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BAFFC6D1F3C3C29006BB7E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5BAFFC6F1F3C3C29006BB7E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,13 +62,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5B2A0EF51F3F446A00216169 /* ITDatePickerController */ = {
+		5B85DB731F6F76CE00123B19 /* ITAlertBox */ = {
 			isa = PBXGroup;
 			children = (
-				5B2A0EF61F3F44B100216169 /* ITDatePickerController.h */,
-				5B2A0EF71F3F44B100216169 /* ITDatePickerController.m */,
+				5B85DB7F1F6F76CE00123B19 /* View */,
+				5B85DB781F6F76CE00123B19 /* Model */,
+				5B85DB741F6F76CE00123B19 /* Controller */,
 			);
-			path = ITDatePickerController;
+			path = ITAlertBox;
+			sourceTree = "<group>";
+		};
+		5B85DB741F6F76CE00123B19 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B85DB771F6F76CE00123B19 /* ITContainerControllerProtocol.h */,
+				5B85DB751F6F76CE00123B19 /* ITContainerController.h */,
+				5B85DB761F6F76CE00123B19 /* ITContainerController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B85DB781F6F76CE00123B19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B85DB791F6F76CE00123B19 /* ITAnimation.h */,
+				5B85DB7A1F6F76CE00123B19 /* ITAnimation.m */,
+				5B85DB7B1F6F76CE00123B19 /* ITBottomAnimation.h */,
+				5B85DB7C1F6F76CE00123B19 /* ITBottomAnimation.m */,
+				5B85DB7D1F6F76CE00123B19 /* ITCenterAnimation.h */,
+				5B85DB7E1F6F76CE00123B19 /* ITCenterAnimation.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B85DB7F1F6F76CE00123B19 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B85DB821F6F76CE00123B19 /* ITAppMacro.h */,
+				5B85DB801F6F76CE00123B19 /* ITAlertBox.h */,
+				5B85DB811F6F76CE00123B19 /* ITAlertBox.m */,
+				5B85DB831F6F76CE00123B19 /* ITDatePicker.h */,
+				5B85DB841F6F76CE00123B19 /* ITDatePicker.m */,
+				5B85DB851F6F76CE00123B19 /* ITPickerView.h */,
+				5B85DB861F6F76CE00123B19 /* ITPickerView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5BAFFC601F3C3C29006BB7E4 = {
@@ -70,7 +128,7 @@
 		5BAFFC6B1F3C3C29006BB7E4 /* ITDatePickerControllerSampleCode */ = {
 			isa = PBXGroup;
 			children = (
-				5B2A0EF51F3F446A00216169 /* ITDatePickerController */,
+				5B85DB731F6F76CE00123B19 /* ITAlertBox */,
 				5BAFFC6F1F3C3C29006BB7E4 /* AppDelegate.h */,
 				5BAFFC701F3C3C29006BB7E4 /* AppDelegate.m */,
 				5BAFFC721F3C3C29006BB7E4 /* ViewController.h */,
@@ -164,10 +222,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B2A0EF81F3F44B100216169 /* ITDatePickerController.m in Sources */,
+				5B85DB8B1F6F76CE00123B19 /* ITAlertBox.m in Sources */,
+				5B85DB8C1F6F76CE00123B19 /* ITDatePicker.m in Sources */,
+				5B85DB881F6F76CE00123B19 /* ITAnimation.m in Sources */,
+				5B85DB8D1F6F76CE00123B19 /* ITPickerView.m in Sources */,
 				5BAFFC741F3C3C29006BB7E4 /* ViewController.m in Sources */,
+				5B85DB871F6F76CE00123B19 /* ITContainerController.m in Sources */,
+				5B85DB8A1F6F76CE00123B19 /* ITCenterAnimation.m in Sources */,
 				5BAFFC711F3C3C29006BB7E4 /* AppDelegate.m in Sources */,
 				5BAFFC6E1F3C3C29006BB7E4 /* main.m in Sources */,
+				5B85DB891F6F76CE00123B19 /* ITBottomAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -276,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
